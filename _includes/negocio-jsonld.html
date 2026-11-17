@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": {{ site.title | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "image": {{ '/assets/img/logo.png' | absolute_url | jsonify }},
+  "telephone": {{ site.telefono_link | jsonify }},
+  "email": {{ site.correo | jsonify }},
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Ciudad de México y Zona Metropolitana"
+  }
+}
+</script>

@@ -1,0 +1,20 @@
+- titulo: Inicio
+  url: /
+- titulo: Servicios
+  hijos:
+    - titulo: Espejos
+      url: /espejos/
+    - titulo: Barandales de cristal
+      url: /barandales/
+    - titulo: Canceles de baño
+      url: /canceles-de-bano/
+    - titulo: Canceles de cristal templado
+      url: /canceles-de-cristal-templado/
+    - titulo: Domos y pérgolas
+      url: /domos/
+    - titulo: Ventanas
+      url: /ventanas/
+    - titulo: Cubiertas
+      url: /cubiertas/
+- titulo: Contacto
+  url: /contacto/

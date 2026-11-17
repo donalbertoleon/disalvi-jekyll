@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="servicio">
+  <header class="servicio-cab">
+    <p class="lema">Servicios</p>
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <div class="servicio-texto">
+    {{ content }}
+  </div>
+
+  {% include galeria.html %}
+
+  <section class="servicio-cta">
+    <h2>¿Tienes un proyecto en mente?</h2>
+    <p>Cuéntanos qué necesitas y te enviamos una cotización.</p>
+    <div class="contacto-botones">
+      <a class="boton" href="mailto:{{ site.correo }}?subject=Cotizaci%C3%B3n%3A%20{{ page.title | url_encode }}">Pedir cotización</a>
+      <a class="boton boton-claro" href="https://wa.me/{{ site.telefono_link | remove: '+' }}?text=Hola%21%20Me%20interesa%20{{ page.title | url_encode }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+</article>

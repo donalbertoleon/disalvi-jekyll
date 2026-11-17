@@ -1,0 +1,24 @@
+<div class="contacto-cta">
+  <h3>Escríbenos un correo</h3>
+  <p>Elige el motivo y se abrirá tu programa de correo con el mensaje listo para completar.</p>
+  <div class="contacto-botones">
+    <a class="boton" href="mailto:{{ site.correo }}?subject=Quiero%20una%20cotizaci%C3%B3n&body=Hola%2C%0A%0AQuiero%20una%20cotizaci%C3%B3n.%0A%0ANombre%3A%20%0ATel%C3%A9fono%3A%20%0AServicio%20(barandales%2C%20ventanas%2C%20domos%2C%20canceles%2C%20espejos%2C%20cubiertas)%3A%20%0AMedidas%20aproximadas%3A%20%0AColonia%20o%20alcald%C3%ADa%3A%20%0A%0AGracias.">Quiero una cotización</a>
+    <a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Tengo%20una%20duda&body=Hola%2C%0A%0AMi%20nombre%20es%3A%20%0A%0AMi%20duda%3A%20%0A%0AGracias.">Tengo una duda</a>
+    <a class="boton boton-claro" href="https://wa.me/{{ site.telefono_link | remove: '+' }}?text=Hola%21%20%C2%BFPueden%20ayudarme%3F" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <p class="correo-copiar">
+    Escríbenos a <strong class="correo-texto">{{ site.correo }}</strong>
+    <button type="button" class="copiar" data-copiar="{{ site.correo }}">Copiar</button>
+  </p>
+  <p>Tel: <a href="tel:{{ site.telefono_link }}">{{ site.telefono }}</a></p>
+</div>
+<script>
+  document.querySelectorAll('.copiar').forEach(function (b) {
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(b.dataset.copiar).then(function () {
+        b.textContent = 'Copiado';
+        setTimeout(function () { b.textContent = 'Copiar'; }, 2000);
+      });
+    });
+  });
+</script>

@@ -1,0 +1,54 @@
+{% if page.galeria %}
+<section class="galeria" aria-label="Galería de {{ page.title }}">
+  <p class="lema">Galería</p>
+  <div class="galeria-grid">
+    {% for f in page.galeria %}
+    {% assign n = forloop.index | prepend: '0' | slice: -2, 2 %}
+    <figure class="foto">
+      <button type="button" class="foto-btn" data-src="{{ f.img | relative_url }}" data-alt="{{ f.alt | escape }}" aria-label="Ampliar foto {{ n }}: {{ f.alt | escape }}">
+        <img src="{{ f.img | relative_url }}" alt="{{ f.alt | escape }}" loading="lazy" decoding="async"
+             onerror="this.closest('.foto').classList.add('sin-foto')">
+        <span class="pendiente">Foto próximamente</span>
+        <span class="num" aria-hidden="true">{{ n }}</span>
+      </button>
+      {% if f.titulo %}<figcaption>{{ f.titulo }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+
+  <dialog class="visor" id="visor" aria-label="Foto ampliada">
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">✕</button>
+    <button type="button" class="visor-ant" aria-label="Foto anterior">‹</button>
+    <img src="" alt="">
+    <button type="button" class="visor-sig" aria-label="Foto siguiente">›</button>
+    <p class="visor-pie"><span class="visor-texto"></span> <span class="visor-cont"></span></p>
+  </dialog>
+</section>
+<script>
+  (function () {
+    var dlg = document.getElementById('visor');
+    if (!dlg || !dlg.showModal) return;
+    var btns = [].slice.call(document.querySelectorAll('.foto-btn'));
+    var img = dlg.querySelector('img'), texto = dlg.querySelector('.visor-texto'),
+        cont = dlg.querySelector('.visor-cont'), idx = 0;
+    function lista() { return btns.filter(function (b) { return !b.closest('.foto').classList.contains('sin-foto'); }); }
+    function mostrar(i) {
+      var l = lista(); if (!l.length) return;
+      idx = (i + l.length) % l.length;
+      img.src = l[idx].dataset.src; img.alt = l[idx].dataset.alt;
+      texto.textContent = l[idx].dataset.alt; cont.textContent = (idx + 1) + ' / ' + l.length;
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { mostrar(lista().indexOf(b)); dlg.showModal(); });
+    });
+    dlg.querySelector('.visor-sig').addEventListener('click', function () { mostrar(idx + 1); });
+    dlg.querySelector('.visor-ant').addEventListener('click', function () { mostrar(idx - 1); });
+    dlg.querySelector('.visor-cerrar').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') mostrar(idx + 1);
+      if (e.key === 'ArrowLeft') mostrar(idx - 1);
+    });
+  })();
+</script>
+{% endif %}

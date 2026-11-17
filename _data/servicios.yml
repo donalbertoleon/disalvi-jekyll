@@ -1,0 +1,21 @@
+- titulo: Espejos
+  url: /espejos/
+  imagen: /assets/img/servicios/espejos.jpg
+- titulo: Domos y pérgolas
+  url: /domos/
+  imagen: /assets/img/servicios/domos.jpg
+- titulo: Barandales de cristal
+  url: /barandales/
+  imagen: /assets/img/servicios/barandales.jpg
+- titulo: Canceles de cristal templado
+  url: /canceles-de-cristal-templado/
+  imagen: /assets/img/servicios/canceles-de-cristal-templado.jpg
+- titulo: Canceles de baño
+  url: /canceles-de-bano/
+  imagen: /assets/img/servicios/canceles-de-bano.jpg
+- titulo: Ventanas
+  url: /ventanas/
+  imagen: /assets/img/servicios/ventanas.jpg
+- titulo: Cubiertas
+  url: /cubiertas/
+  imagen: /assets/img/servicios/cubiertas.jpg

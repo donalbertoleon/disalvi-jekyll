@@ -1,0 +1,25 @@
+title: Disalvi
+tagline: Soluciones en Aluminio y Vidrio
+description: Cancelería, canceles de aluminio y de cristal templado, barandales, domos, ventanas, espejos y cubiertas en CDMX y zona metropolitana.
+url: "https://disalvi.com.mx"
+baseurl: ""
+lang: es-MX
+locale: es_MX
+
+# SEO
+image: /assets/img/logo.png        # imagen al compartir el enlace (WhatsApp, Facebook)
+webmaster_verifications:
+  google: QqxpNMiYYns_OhoPNMLM08xS7HRjZ2RUhBSjwhvLuKw
+
+telefono: "(+52) 55 1292 9280"
+telefono_link: "+525512929280"
+correo: contacto@disalvi.com.mx
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
