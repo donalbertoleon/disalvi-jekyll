@@ -178,19 +178,24 @@ legend { color: var(--oro); }
 @media (prefers-reduced-motion: reduce) { .franja .servicios a { transition: none; } }
 
 /* Logo y botón de WhatsApp en la barra */
-.marca { display: flex; align-items: center; order: 1; }
+.marca { display: flex; align-items: center; gap: .7rem; order: 1; }
 .marca img { display: block; height: 46px; width: auto; }
 .menu { order: 2; margin-left: auto; margin-right: 1.5rem; }
-.wa-boton {
-  order: 3; display: inline-flex; align-items: center; gap: .5rem;
-  background: linear-gradient(135deg, var(--oro-claro), #c9a02b); color: var(--noche);
-  padding: .55rem 1.1rem; font-weight: 800; text-decoration: none; border-radius: 4px;
-}
-.wa-boton:hover { background: var(--blanco); color: var(--noche); }
+.wa-boton { order: 3; display: inline-flex; align-items: center; gap: .6rem; color: var(--blanco); font-weight: 700; text-decoration: none; }
+.wa-icono { display: flex; align-items: center; justify-content: center; flex: none; width: 2.7rem; height: 2.7rem; border-radius: 50%; background: #25d366; color: #fff; }
+.wa-icono svg { width: 1.5rem; height: 1.5rem; }
+.wa-boton:hover .wa-icono { background: #1ebe5a; }
+.wa-boton:hover .wa-numero { color: var(--oro); }
 @media (max-width: 800px) {
-  .wa-boton { margin-left: auto; margin-right: .6rem; padding: .45rem .8rem; }
+  .wa-boton { margin-left: auto; margin-right: .6rem; }
   .menu-boton { order: 4; }
   .menu { order: 5; margin: 0; }
+}
+@media (max-width: 480px) {
+  .marca { font-size: 1.3rem; }
+  .marca img { height: 38px; }
+  .wa-numero { font-size: .85rem; }
+  .wa-icono { width: 2.3rem; height: 2.3rem; }
 }
 
 /* Íconos de Compromiso, Calidad e Innovación */
@@ -286,3 +291,28 @@ legend { color: var(--oro); }
 /* Cierre de la página de servicio */
 .servicio-cta { margin-top: 4rem; padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--marino-2); border: 1px solid var(--oro); }
 .servicio-cta h2 { margin-top: 0; }
+
+/* ===== Contacto: dos columnas con tarjetas ===== */
+.seccion-contacto { background: radial-gradient(60rem 30rem at 100% 0%, rgba(212, 175, 55, .13), transparent 60%), var(--marino-2); }
+.contacto-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; margin-top: 1.5rem; }
+.contacto-lado h3 { margin-top: 0; font-size: 1.5rem; color: var(--blanco); }
+.contacto-lado p { max-width: 30rem; }
+.cobertura { display: flex; align-items: center; gap: .6rem; color: var(--oro-claro); font-weight: 500; }
+.cobertura svg { width: 1.3rem; height: 1.3rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.contacto-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.cc {
+  position: relative; display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.3rem;
+  background: rgba(5, 13, 27, .55); border: 1px solid rgba(212, 175, 55, .35); border-left: 3px solid var(--oro);
+  transition: transform .25s, border-color .25s, background .25s;
+}
+.cc:hover { transform: translateX(4px); border-color: var(--oro); background: rgba(5, 13, 27, .85); }
+.cc-icono { flex: none; display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border: 2px solid var(--oro); border-radius: 50%; color: var(--oro); }
+.cc-icono svg { width: 1.4rem; height: 1.4rem; }
+.cc-icono svg.trazo { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.cc-etiqueta { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--oro-claro); }
+.cc-valor { color: var(--blanco); font-size: 1.15rem; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+.cc-valor::after { content: ""; position: absolute; inset: 0; }
+.cc .copiar { position: relative; z-index: 2; margin-left: auto; flex: none; }
+.pagina .contacto-grid { grid-template-columns: 1fr; }
+@media (max-width: 800px) { .contacto-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .cc { transition: none; } .cc:hover { transform: none; } }
