@@ -316,3 +316,8 @@ legend { color: var(--oro); }
 .pagina .contacto-grid { grid-template-columns: 1fr; }
 @media (max-width: 800px) { .contacto-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .cc { transition: none; } .cc:hover { transform: none; } }
+
+/* En celular se oculta la palabra "Disalvi" junto al logo */
+@media (max-width: 600px) {
+  .marca-texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
