@@ -179,7 +179,7 @@ legend { color: var(--oro); }
 
 /* Logo y botón de WhatsApp en la barra */
 .marca { display: flex; align-items: center; gap: .7rem; order: 1; }
-.marca img { display: block; height: 60px; width: auto; }
+.marca img { display: block; height: 46px; width: auto; }
 .menu { order: 2; margin-left: auto; margin-right: 1.5rem; }
 .wa-boton { order: 3; display: inline-flex; align-items: center; gap: .6rem; color: var(--blanco); font-weight: 700; text-decoration: none; }
 .wa-icono { display: flex; align-items: center; justify-content: center; flex: none; width: 2.7rem; height: 2.7rem; border-radius: 50%; background: #25d366; color: #fff; }
@@ -193,7 +193,7 @@ legend { color: var(--oro); }
 }
 @media (max-width: 480px) {
   .marca { font-size: 1.3rem; }
-  .marca img { height: 48px; }
+  .marca img { height: 38px; }
   .wa-numero { font-size: .85rem; }
   .wa-icono { width: 2.3rem; height: 2.3rem; }
 }
