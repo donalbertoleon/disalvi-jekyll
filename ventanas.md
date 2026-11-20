@@ -12,7 +12,7 @@ galeria:
     titulo: "Ventana"
   - img: /assets/img/galeria/ventanas/03.jpg
     alt: "Ventana y mosquitero"
-    titulo: "Ventana y mosquitero"
+    titulo: "Ventana"
   - img: /assets/img/galeria/ventanas/04.jpg
     alt: "Ventanas cocina"
     titulo: "Ventanas cocina"

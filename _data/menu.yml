@@ -16,5 +16,7 @@
       url: /ventanas/
     - titulo: Cubiertas
       url: /cubiertas/
+    - titulo: Proyectos
+      url: /proyectos/
 - titulo: Contacto
   url: /contacto/

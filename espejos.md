@@ -11,7 +11,7 @@ galeria:
     alt: "Espejo baño"
     titulo: "Espejo baño"
   - img: /assets/img/galeria/espejos/03.jpg
-    alt: "Espejo lavabo"
+    alt: "Espejo estancia"
     titulo: "Espejo lavabo"
   - img: /assets/img/galeria/espejos/04.jpg
     alt: "Espejo recámara"

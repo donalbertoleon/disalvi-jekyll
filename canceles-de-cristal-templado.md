@@ -20,8 +20,8 @@ galeria:
     alt: "Cancel interior"
     titulo: "Cancel interior"
   - img: /assets/img/galeria/canceles-de-cristal-templado/06.jpg
-    alt: "Cava"
-    titulo: "Cava"
+    alt: "Cancel oficina"
+    titulo: "Cancel oficina"
 ---
 
 Diseñamos e instalamos canceles de cristal templado para casas y oficinas, combinando elegancia, funcionalidad y resistencia. Creamos soluciones a medida que se adaptan a cada espacio, con acabados modernos y de alta calidad. Dale un toque limpio, sofisticado y profesional a tus ambientes con diseños hechos especialmente para ti.

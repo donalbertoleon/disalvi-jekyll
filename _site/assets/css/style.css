@@ -179,7 +179,7 @@ legend { color: var(--oro); }
 
 /* Logo y botón de WhatsApp en la barra */
 .marca { display: flex; align-items: center; gap: .7rem; order: 1; }
-.marca img { display: block; height: 46px; width: auto; }
+.marca img { display: block; height: 60px; width: auto; }
 .menu { order: 2; margin-left: auto; margin-right: 1.5rem; }
 .wa-boton { order: 3; display: inline-flex; align-items: center; gap: .6rem; color: var(--blanco); font-weight: 700; text-decoration: none; }
 .wa-icono { display: flex; align-items: center; justify-content: center; flex: none; width: 2.7rem; height: 2.7rem; border-radius: 50%; background: #25d366; color: #fff; }
@@ -193,7 +193,7 @@ legend { color: var(--oro); }
 }
 @media (max-width: 480px) {
   .marca { font-size: 1.3rem; }
-  .marca img { height: 38px; }
+  .marca img { height: 48px; }
   .wa-numero { font-size: .85rem; }
   .wa-icono { width: 2.3rem; height: 2.3rem; }
 }
@@ -317,7 +317,26 @@ legend { color: var(--oro); }
 @media (max-width: 800px) { .contacto-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .cc { transition: none; } .cc:hover { transform: none; } }
 
-/* En celular se oculta la palabra "Disalvi" junto al logo */
+/* En celular se oculta la palabra "Disalvi" junto al logo (sigue disponible para lectores de pantalla) */
 @media (max-width: 600px) {
   .marca-texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+
+/* Botón flotante de WhatsApp (páginas de servicio) */
+.wa-flotante {
+  position: fixed; left: 1.2rem; bottom: 1.2rem; z-index: 6;
+  width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center;
+  background: #25d366; color: #fff; border-radius: 50%; box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+  transition: transform .2s, background .2s;
+}
+.wa-flotante svg { width: 1.9rem; height: 1.9rem; }
+.wa-flotante:hover { background: #1ebe5a; transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) { .wa-flotante { transition: none; } .wa-flotante:hover { transform: none; } }
+
+/* Botón de regreso al inicio en las páginas de servicio */
+.volver {
+  display: inline-block; margin-bottom: 1.2rem; padding-bottom: .2rem;
+  color: var(--oro-claro); font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.volver:hover { color: var(--blanco); border-bottom-color: var(--oro); }

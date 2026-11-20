@@ -19,3 +19,6 @@
 - titulo: Cubiertas
   url: /cubiertas/
   imagen: /assets/img/servicios/cubiertas.jpg
+- titulo: Proyectos
+  url: /proyectos/
+  imagen: /assets/img/servicios/proyectos.jpg
