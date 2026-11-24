@@ -16,6 +16,8 @@ galeria:
     alt: "Proyecto 5"
   - img: /assets/img/galeria/proyectos/06.jpg
     alt: "Proyecto 6"
+  - img: /assets/img/galeria/proyectos/07.jpg
+    alt: "Proyecto 6"
 ---
 
 Conoce algunos de nuestros proyectos en aluminio y vidrio.
