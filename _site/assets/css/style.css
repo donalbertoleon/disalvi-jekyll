@@ -179,7 +179,7 @@ legend { color: var(--oro); }
 
 /* Logo y botón de WhatsApp en la barra */
 .marca { display: flex; align-items: center; gap: .7rem; order: 1; }
-.marca img { display: block; height: 46px; width: auto; }
+.marca img { display: block; height: 60px; width: auto; }
 .menu { order: 2; margin-left: auto; margin-right: 1.5rem; }
 .wa-boton { order: 3; display: inline-flex; align-items: center; gap: .6rem; color: var(--blanco); font-weight: 700; text-decoration: none; }
 .wa-icono { display: flex; align-items: center; justify-content: center; flex: none; width: 2.7rem; height: 2.7rem; border-radius: 50%; background: #25d366; color: #fff; }
@@ -193,7 +193,7 @@ legend { color: var(--oro); }
 }
 @media (max-width: 480px) {
   .marca { font-size: 1.3rem; }
-  .marca img { height: 38px; }
+  .marca img { height: 48px; }
   .wa-numero { font-size: .85rem; }
   .wa-icono { width: 2.3rem; height: 2.3rem; }
 }
@@ -317,19 +317,15 @@ legend { color: var(--oro); }
 @media (max-width: 800px) { .contacto-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .cc { transition: none; } .cc:hover { transform: none; } }
 
-/* En celular se oculta la palabra "Disalvi" junto al logo (sigue disponible para lectores de pantalla) */
-@media (max-width: 600px) {
-  .marca-texto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-}
-
 /* Botón flotante de WhatsApp (páginas de servicio) */
 .wa-flotante {
   position: fixed; left: 1.2rem; bottom: 1.2rem; z-index: 6;
-  width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center;
+  width: 2.8rem; height: 2.8rem; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
   background: #25d366; color: #fff; border-radius: 50%; box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
   transition: transform .2s, background .2s;
 }
-.wa-flotante svg { width: 1.9rem; height: 1.9rem; }
+.wa-flotante svg { width: 1.5rem; height: 1.5rem; max-width: 100%; flex: none; }
 .wa-flotante:hover { background: #1ebe5a; transform: scale(1.06); }
 @media (prefers-reduced-motion: reduce) { .wa-flotante { transition: none; } .wa-flotante:hover { transform: none; } }
 
@@ -340,3 +336,42 @@ legend { color: var(--oro); }
   border-bottom: 1px solid transparent;
 }
 .volver:hover { color: var(--blanco); border-bottom-color: var(--oro); }
+
+/* ===== Menú hamburguesa en celular ===== */
+.menu-boton { width: 2.8rem; height: 2.8rem; padding: 0; display: none; align-items: center; justify-content: center; background: none; border: 1px solid var(--oro); border-radius: 4px; cursor: pointer; }
+.barras, .barras::before, .barras::after { display: block; width: 1.4rem; height: 2px; background: var(--oro); border-radius: 2px; transition: transform .25s, background .25s; }
+.barras { position: relative; }
+.barras::before, .barras::after { content: ""; position: absolute; left: 0; }
+.barras::before { top: -.45rem; }
+.barras::after { top: .45rem; }
+.menu-boton[aria-expanded="true"] .barras { background: transparent; }
+.menu-boton[aria-expanded="true"] .barras::before { top: 0; transform: rotate(45deg); }
+.menu-boton[aria-expanded="true"] .barras::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 800px) {
+  .menu-boton { display: flex; }
+  .menu { display: none; width: 100%; margin: .8rem 0 0; border-top: 1px solid rgba(212, 175, 55, .35); }
+  .menu.abierto { display: block; max-height: calc(100vh - 5.5rem); overflow-y: auto; }
+  .menu ul { flex-direction: column; gap: 0; padding: .3rem 0; }
+  .menu > ul > li > a, .menu .tiene-sub > span {
+    display: flex; align-items: center; justify-content: space-between; width: 100%;
+    min-height: 3rem; padding: 0 .2rem; font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+  .menu a:hover, .menu a[aria-current="page"], .tiene-sub.activo > span { border-bottom: 1px solid rgba(255, 255, 255, .1); color: var(--oro); }
+  .menu .tiene-sub .sub { display: none !important; position: static; min-width: 0; border: 0; padding: 0 0 .4rem 1rem !important; }
+  .menu .tiene-sub.abierto .sub { display: flex !important; }
+  .menu .sub a { display: flex; align-items: center; min-height: 2.8rem; border-bottom: 1px solid rgba(255, 255, 255, .06); font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .barras, .barras::before, .barras::after { transition: none; } }
+
+/* Celulares pequeños: la barra se compacta para que quepan logo, "Disalvi", WhatsApp y menú en una fila */
+@media (max-width: 420px) {
+  .cabecera { padding-left: .8rem; padding-right: .8rem; }
+  .marca { font-size: 1.1rem; gap: .5rem; }
+  .marca img { height: 42px; }
+  .wa-boton { gap: .4rem; margin-right: .5rem; }
+  .wa-icono { width: 2.1rem; height: 2.1rem; }
+  .wa-icono svg { width: 1.2rem; height: 1.2rem; }
+  .wa-numero { font-size: .78rem; }
+}
